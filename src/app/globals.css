@@ -134,9 +134,9 @@ footer {
   height: 400px;
 }
 
-/* .cat__item:nth-child(2n + 1) {
+.cat__item:nth-child(2n + 1) {
   flex-direction: row-reverse;
-} */
+}
 
 /* blog page  */
 

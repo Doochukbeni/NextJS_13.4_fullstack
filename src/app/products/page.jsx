@@ -8,7 +8,11 @@ const page = async () => {
   return (
     <div>
       {data.map((item) => (
-        <Link href={`/products/${item.id}`} key={item.id}>
+        <Link
+          href={`/products/${item.id}`}
+          key={item.id}
+          className=" font-semibold text-slate-600 border-5 mb-4 shadow-2xl p-3"
+        >
           <h1>{item.title}</h1>
           <p>{item.body} </p>
         </Link>
