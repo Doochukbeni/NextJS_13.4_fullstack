@@ -41,7 +41,7 @@ const BlogPost = async ({ params }) => {
               <Image
                 src={data.image}
                 alt="user image"
-                className="rounded-full user__img"
+                className="rounded-full object-cover"
                 fill={true}
               />
             </div>
@@ -54,7 +54,7 @@ const BlogPost = async ({ params }) => {
           <Image
             src={data.image}
             alt="blog image"
-            className="blog__img"
+            className="object-cover"
             fill={true}
           />
         </div>

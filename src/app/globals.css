@@ -146,18 +146,9 @@ footer {
   width: 30px;
   position: relative;
 }
-.user__img {
-  object-fit: cover;
-
-  border-radius: 100%;
-}
 
 .img__blog {
   height: 250px;
   width: 100%;
   position: relative;
-}
-
-.blog__img {
-  object-fit: cover;
 }
