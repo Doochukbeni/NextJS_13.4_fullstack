@@ -17,7 +17,7 @@ const Dashboard = () => {
     `/api/posts?username=${session?.data?.user.name}`,
     fetcher
   );
-  console.log(data);
+
   const handleDelete = async (id) => {
     try {
       await fetch(`/api/posts/${id}`, {
@@ -58,7 +58,7 @@ const Dashboard = () => {
     return <p>Loading...</p>;
   }
   if (session.status === "unauthenticated") {
-    router?.push("dashboard/login");
+    router?.push("/dashboard/login");
   }
 
   if (session.status === "authenticated") {

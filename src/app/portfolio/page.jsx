@@ -1,6 +1,6 @@
-import Link from "next/link";
 import React from "react";
 import PortfolioItem from "../components/PortfolioItem";
+import { categoryItem } from "./catItem";
 
 export const metadata = {
   title: "My work samples",
@@ -15,10 +15,13 @@ const Portfolio = () => {
       </h1>
 
       <div className="flex gap-5 mb-5">
-        <PortfolioItem url="/portfolio/slack" title="Slack clone" />
-        <PortfolioItem url="/portfolio/gmail" title="gmail clone" />
-        <PortfolioItem url="/portfolio/chatapp" title="chat app" />
-        <PortfolioItem url="/portfolio/linkedin" title="linkedin clone" />
+        {categoryItem.map((item) => (
+          <PortfolioItem
+            url={`/portfolio/${item.id}`}
+            title={item.title}
+            key={item.id}
+          />
+        ))}
       </div>
     </div>
   );
