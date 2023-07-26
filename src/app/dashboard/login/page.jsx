@@ -25,10 +25,10 @@ const Login = () => {
     router?.push("/dashboard");
   }
   return (
-    <main>
+    <main className=" my-10 ">
       <section className="flex items-center justify-center">
         <button
-          className="bg-slate-800 text-zinc-300 text-2xl border-3 p-3 rounded-md"
+          className="bg-slate-800 text-zinc-300 text-2xl border-3 p-3 capitalize font-semibold rounded-md"
           onClick={() => signIn("google")}
         >
           login with google

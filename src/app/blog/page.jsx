@@ -24,12 +24,12 @@ const Blog = async () => {
   const data = await getData();
 
   return (
-    <section>
+    <section className="w-full my-10 mx-auto">
       {data.map((blog) => (
         <Link
           key={blog._id}
           href={`/blog/${blog._id}`}
-          className="flex gap-10 items-center cat__item border-5 mb-4 shadow-2xl p-3"
+          className="flex gap-10 items-center  cat__item border-5 mb-4 shadow-2xl p-3"
         >
           <div className="flex-1 relative img__container2">
             <Image
@@ -40,8 +40,10 @@ const Blog = async () => {
             />
           </div>
           <div className="flex-1">
-            <h1>{blog.title}</h1>
-            <p>{blog.desc}</p>
+            <h1 className="text-slate-900 hover:text-slate-800 text-3xl font-semibold capitalize">
+              {blog.title}
+            </h1>
+            <p className="text-base leading-7 text-slate-600">{blog.desc}</p>
           </div>
         </Link>
       ))}

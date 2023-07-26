@@ -14,7 +14,7 @@ const Portfolio = () => {
         Select a project you wish to view
       </h1>
 
-      <div className="flex gap-5 mb-5">
+      <div className="flex flex-col sm:flex-row gap-5 mb-5">
         {categoryItem.map((item) => (
           <PortfolioItem
             url={`/portfolio/${item.id}`}

@@ -27,10 +27,10 @@ const BlogPost = async ({ params }) => {
   console.log(data);
 
   return (
-    <section className="flex flex-col gap-10">
-      <main className="flex gap-5">
-        <div className="flex-1 gap-5 items-center">
-          <h1 className="text-2xl font-bold text-slate-700 leading-9">
+    <section className="flex flex-col my-10 mx-auto gap-20 py-8">
+      <main className="flex  h-80 sm:flex-row gap-5">
+        <div className="flex-1 gap-5 flex flex-col justify-between">
+          <h1 className="text-3xl font-bold text-slate-700 leading-9 capitalize">
             {data.title}
           </h1>
           <p className="text-justify text-slate-600 font-semibold">
@@ -50,15 +50,16 @@ const BlogPost = async ({ params }) => {
             </span>
           </div>
         </div>
-        <div className="flex-1 relative img__blog">
+        <div className="flex-1 relative ">
           <Image
             src={data.image}
             alt="blog image"
-            className="object-cover"
-            fill={true}
+            className="object-cover rounded-md w-full h-64 absolute"
+            fill
           />
         </div>
       </main>
+      <hr className="mx-auto w-1/2 bg-slate-900" />
       <main>
         <p className="text-justify text-slate-600 font-semibold">
           {data.content}

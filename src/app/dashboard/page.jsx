@@ -1,6 +1,7 @@
 "use client";
 import { useSession } from "next-auth/react";
 import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import useSWR from "swr";
@@ -63,14 +64,15 @@ const Dashboard = () => {
 
   if (session.status === "authenticated") {
     return (
-      <div className="flex gap-20">
+      <div className="flex flex-col md:flex-row w-full my-10 mx-auto gap-20 py-8 ">
         <div className="flex-1">
           {isLoading
             ? "Loading"
             : data?.map((post) => (
-                <div
+                <Link
+                  href={`/blog/${post._id}`}
                   key={post._id}
-                  className="flex items-center justify-between my-5 mx-0"
+                  className="flex items-center justify-between my-5 mx-0 bg-zinc-200 pr-3"
                 >
                   <div className="">
                     <Image
@@ -78,10 +80,10 @@ const Dashboard = () => {
                       alt=""
                       width={200}
                       height={100}
-                      className="cover"
+                      className="object-cover"
                     />
                   </div>
-                  <h2 className="text-slate-800 text-2xl font-semibold capitalize">
+                  <h2 className="text-slate-800 text-2xl font-semibold capitalize ">
                     {post.title}
                   </h2>
                   <span
@@ -90,7 +92,7 @@ const Dashboard = () => {
                   >
                     X
                   </span>
-                </div>
+                </Link>
               ))}
         </div>
 
