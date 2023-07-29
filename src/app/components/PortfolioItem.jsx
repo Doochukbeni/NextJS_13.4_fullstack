@@ -5,7 +5,7 @@ const PortfolioItem = ({ url, title }) => {
   return (
     <Link
       href={url}
-      className="rounded-md border-2 border-solid border-gray-500  w-full sm:w-72 h-96 relative  pro__link "
+      className="rounded-md border-none w-full sm:w-72 h-96 relative  shadow-lg hover:scale-125 hover:z-20 transition-transform ease-in pro__link "
     >
       <span className="absolute left-2.5 bottom-2.5 text-zinc-300 font-bold capitalize text-xl ">
         {title}

@@ -17,10 +17,12 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <AuthProvider>
           <Navbar />
-          <div className="container pb-10 mt-11">{children}</div>
+          <div className="relative px-1 sm:px-10 mx-auto">{children}</div>
           <Footer />
         </AuthProvider>
       </body>
     </html>
   );
 }
+
+// container px-5 sm:px-10 pb-10 mt-11

@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { MdDelete } from "react-icons/md";
 import useSWR from "swr";
 
 const Dashboard = () => {
@@ -69,8 +70,7 @@ const Dashboard = () => {
           {isLoading
             ? "Loading"
             : data?.map((post) => (
-                <Link
-                  href={`/blog/${post._id}`}
+                <div
                   key={post._id}
                   className="flex items-center justify-between my-5 mx-0 bg-zinc-200 pr-3"
                 >
@@ -83,16 +83,25 @@ const Dashboard = () => {
                       className="object-cover"
                     />
                   </div>
-                  <h2 className="text-slate-800 text-2xl font-semibold capitalize ">
-                    {post.title}
-                  </h2>
+                  <div className="flex flex-col gap-5">
+                    <h2 className="text-slate-800 text-2xl font-semibold capitalize ">
+                      {post.title}
+                    </h2>
+                    <Link
+                      href={`/blog/${post._id}`}
+                      className="leading-3 rounded-md w-fit bg-indigo-600 px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    >
+                      see more
+                    </Link>
+                  </div>
+
                   <span
-                    className="text-red-600 font-bold cursor-pointer"
+                    className="text-red-500 font-bold cursor-pointer"
                     onClick={() => handleDelete(post._id)}
                   >
-                    X
+                    <MdDelete size={30} />
                   </span>
-                </Link>
+                </div>
               ))}
         </div>
 

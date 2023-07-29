@@ -9,19 +9,19 @@ export const metadata = {
 
 const Page = () => {
   return (
-    <section className="flex flex-col my-8 mx-auto gap-10 py-8">
+    <section className="flex flex-col my-5 mx-auto gap-10 py-8">
       <div>
-        <figure class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
+        <figure className="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800">
           <Image
-            class="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
+            className="w-24 h-24 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
             src="/passport_photo.JPG"
             alt=""
             width="384"
             height="512"
           />
-          <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+          <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
             <blockquote>
-              <p class="text-lg font-medium text-zinc-400">
+              <p className="text-lg font-medium text-zinc-400">
                 “Hello there! I'm a highly skilled Full Stack Web Developer with
                 a wealth of experience in a diverse range of technologies,
                 including ReactJS, Next.js, NodeJS, Tailwind CSS, React Redux,
@@ -30,11 +30,11 @@ const Page = () => {
                 delivering top-notch solutions that exceed expectations.”
               </p>
             </blockquote>
-            <figcaption class="font-medium">
-              <div class="text-sky-500 dark:text-sky-400">
+            <figcaption className="font-medium">
+              <div className="text-sky-500 dark:text-sky-400">
                 Chukwuma Benjamin Izummuo
               </div>
-              <div class="text-slate-700 dark:text-slate-500">
+              <div className="text-slate-700 dark:text-slate-500">
                 Fullstack ReactJS/NextJS software engineer.
               </div>
             </figcaption>

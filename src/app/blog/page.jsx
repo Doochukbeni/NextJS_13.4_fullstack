@@ -29,14 +29,14 @@ const Blog = async () => {
         <Link
           key={blog._id}
           href={`/blog/${blog._id}`}
-          className="flex gap-10 items-center  cat__item border-5 mb-4 shadow-2xl p-3"
+          className="flex flex-col sm:flex-row gap-10 items-center  cat__item border-5 mb-4 shadow-2xl p-3"
         >
           <div className="flex-1 relative img__container2">
             <Image
               src={blog.image}
               alt="blog-image"
               className="cat__img rounded-md"
-              fill={true}
+              fill
             />
           </div>
           <div className="flex-1">
