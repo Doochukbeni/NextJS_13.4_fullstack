@@ -57,7 +57,13 @@ const Dashboard = () => {
   };
 
   if (session.status === "loading") {
-    return <p>Loading...</p>;
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <p className="font-semibold text-2xl text-gray-400 leading-4">
+          Loading ...
+        </p>
+      </div>
+    );
   }
   if (session.status === "unauthenticated") {
     router?.push("/dashboard/login");
@@ -67,42 +73,48 @@ const Dashboard = () => {
     return (
       <div className="flex flex-col md:flex-row w-full my-10 mx-auto gap-20 py-8 ">
         <div className="flex-1">
-          {isLoading
-            ? "Loading"
-            : data?.map((post) => (
-                <div
-                  key={post._id}
-                  className="flex items-center justify-between my-5 mx-0 bg-zinc-200 pr-3"
-                >
-                  <div className="">
-                    <Image
-                      src={post.image}
-                      alt=""
-                      width={200}
-                      height={100}
-                      className="object-cover"
-                    />
-                  </div>
-                  <div className="flex flex-col gap-5">
-                    <h2 className="text-slate-800 text-2xl font-semibold capitalize ">
-                      {post.title}
-                    </h2>
-                    <Link
-                      href={`/blog/${post._id}`}
-                      className="leading-3 rounded-md w-fit bg-indigo-600 px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                    >
-                      see more
-                    </Link>
-                  </div>
-
-                  <span
-                    className="text-red-500 font-bold cursor-pointer"
-                    onClick={() => handleDelete(post._id)}
-                  >
-                    <MdDelete size={30} />
-                  </span>
+          {isLoading ? (
+            <div className="flex items-center justify-center min-h-screen">
+              <p className="font-semibold text-2xl text-gray-400 leading-4">
+                Loading ...
+              </p>
+            </div>
+          ) : (
+            data?.map((post) => (
+              <div
+                key={post._id}
+                className="flex items-center justify-between my-5 mx-0 bg-zinc-200 pr-3"
+              >
+                <div className="">
+                  <Image
+                    src={post.image}
+                    alt=""
+                    width={200}
+                    height={100}
+                    className="object-cover"
+                  />
                 </div>
-              ))}
+                <div className="flex flex-col gap-5">
+                  <h2 className="text-slate-800 text-2xl font-semibold capitalize ">
+                    {post.title}
+                  </h2>
+                  <Link
+                    href={`/blog/${post._id}`}
+                    className="leading-3 rounded-md w-fit bg-indigo-600 px-2 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    see more
+                  </Link>
+                </div>
+
+                <span
+                  className="text-red-500 font-bold cursor-pointer"
+                  onClick={() => handleDelete(post._id)}
+                >
+                  <MdDelete size={30} />
+                </span>
+              </div>
+            ))
+          )}
         </div>
 
         <div className="flex-1">

@@ -1,8 +1,8 @@
-import Carousel from "./components/Carousel";
-import Hero from "./components/Hero";
-import Background from "./components/Background";
-import TestimonialsBackground from "./components/(testimonials)/TestimonialsBackground";
-import Testimonials from "./components/(testimonials)/Testimonials";
+import Carousel from "../components/Carousel";
+import Hero from "../components/Hero";
+import Background from "../components/Background";
+import TestimonialsBackground from "../components/(testimonials)/TestimonialsBackground";
+import Testimonials from "../components/(testimonials)/Testimonials";
 
 export default function Home() {
   return (

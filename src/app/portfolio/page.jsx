@@ -1,5 +1,5 @@
 import React from "react";
-import PortfolioItem from "../components/PortfolioItem";
+import PortfolioItem from "../../components/PortfolioItem";
 import { categoryItem } from "./catItem";
 
 export const metadata = {

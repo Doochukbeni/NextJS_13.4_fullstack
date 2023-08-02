@@ -1,6 +1,6 @@
-import AuthProvider from "./components/AuthProvider";
-import Footer from "./components/Footer";
-import Navbar from "./components/Navbar";
+import AuthProvider from "../components/AuthProvider";
+import Footer from "../components/Footer";
+import Navbar from "../components/Navbar";
 import "./globals.css";
 import { Inter } from "next/font/google";
 
@@ -17,7 +17,9 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         <AuthProvider>
           <Navbar />
-          <div className="relative px-1 sm:px-10 mx-auto">{children}</div>
+          <div className="relative overflow-hidden px-1 sm:px-10 mx-auto">
+            {children}
+          </div>
           <Footer />
         </AuthProvider>
       </body>

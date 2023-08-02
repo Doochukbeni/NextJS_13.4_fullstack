@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import CredentialProvider from "next-auth/providers/credentials";
-import connect from "@/app/utils/db";
+import connect from "@/utils/db";
 import User from "../../../../models/User";
 import bcrypt from "bcryptjs";
 
