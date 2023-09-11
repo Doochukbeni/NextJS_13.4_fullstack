@@ -29,9 +29,7 @@ export async function POST(req, res) {
       },
     });
 
-    // async..await is not allowed in global scope, must use a wrapper
     async function main() {
-      // send mail with defined transport object
       const info = await transporter.sendMail({
         from: email, // sender address
         to: process.env.GOOGLE_CLIENT_EMAIL, // list of receivers

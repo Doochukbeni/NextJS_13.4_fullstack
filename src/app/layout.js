@@ -1,3 +1,4 @@
+import { Toaster } from "react-hot-toast";
 import AuthProvider from "../components/AuthProvider";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -15,6 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <Toaster />
         <AuthProvider>
           <Navbar />
           <div className="relative overflow-hidden px-1 sm:px-10 mx-auto">

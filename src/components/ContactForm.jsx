@@ -3,25 +3,28 @@
 import axios from "axios";
 import Link from "next/link";
 import { useState } from "react";
+import { toast } from "react-hot-toast";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (ev) => {
     ev.preventDefault();
     if (!name) {
-      return alert("Name is required");
+      return toast("Name is required");
     }
     if (!email) {
-      return alert("Email is required");
+      return toast("Email is required");
     }
     if (!message) {
-      return alert("Message is required");
+      return toast("Message is required");
     }
 
     try {
+      setLoading(true);
       await axios.post(
         "http://localhost:3000/api/mailer",
         JSON.stringify({ name, email, message }),
@@ -34,8 +37,11 @@ const ContactForm = () => {
       setName("");
       setEmail("");
       setMessage("");
+      toast.success("message sent successfully");
     } catch (error) {
-      console.log(error);
+      toast.error("something went wrong, try again");
+    } finally {
+      setLoading(false);
     }
   };
   return (
@@ -56,6 +62,7 @@ const ContactForm = () => {
               type="text"
               id="name"
               value={name}
+              autoComplete="off"
               onChange={(e) => setName(e.target.value)}
               required
               name="name"
@@ -77,6 +84,7 @@ const ContactForm = () => {
               type="email"
               required
               value={email}
+              autoComplete="off"
               onChange={(e) => setEmail(e.target.value)}
               id="email"
               name="email"
@@ -98,6 +106,7 @@ const ContactForm = () => {
               name="message"
               id="message"
               value={message}
+              autoComplete="off"
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Message"
               cols="30"
@@ -120,6 +129,7 @@ const ContactForm = () => {
 
         <button
           type="submit"
+          disabled={loading}
           onClick={handleSubmit}
           className="block w-full my-4 rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         >
